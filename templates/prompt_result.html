@@ -1,0 +1,17 @@
+<!-- templates/prompt_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prompt_result.css') }}">
+</head>
+<body>
+    <h1>Prompt Result</h1>
+    <p><strong>Prompt:</strong> {{ prompt_text }}</p>
+    <p><strong>Response:</strong></p>
+    <pre>{{ response_text }}</pre>
+    <a href="{{ url_for('index') }}" class="back-button">Back to Menu</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Filter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/filter_image.css') }}">
+    <script src="{{ url_for('static', filename='js/filters.js') }}" defer></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Select a Filter</h1>
+    </div>
+    <div id="filters">
+        <div class="filter-options">
+            {% for filter in filters %}
+                <button class="filter-btn" data-filter="{{ filter }}">{{ filter.capitalize() }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="image-container">
+        <h2>Original Image</h2>
+        <img id="original-image" src="{{ url_for('send_uploaded_file', filename='original_image.jpg') }}" alt="Original Image">
+    </div>
+    <div class="image-container">
+        <h2>Processed Image</h2>
+        <img id="processed-image" src="{{ url_for('send_uploaded_file', filename='original_image.jpg') }}" alt="Processed Image">
+    </div>
+    <a href="{{ url_for('index') }}" id="back-link">Back to Menu</a>
+</body>
+</html>

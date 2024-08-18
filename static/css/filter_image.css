@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+#header {
+    background-color:white;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#filters {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#filters .filter-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#filters .filter-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#filters .filter-btn:hover {
+    background-color: #e4e9ee;
+    color: #333;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 20%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#back-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}

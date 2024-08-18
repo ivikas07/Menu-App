@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Video with Filters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/filter.css') }}">
+</head>
+<body>
+    <h1>Live Video with Filters</h1>
+    <div id="video-container">
+        <img src="{{ url_for('video_feed_with_filters') }}" alt="Video Feed">
+    </div>
+    <div id="filters">
+        <h2>Select a Filter:</h2>
+        <a href="{{ url_for('select_video_filter', filter_name='none') }}">No Filter</a>
+       <!--- <a href="{{ url_for('select_video_filter', filter_name='glass') }}">
+            <img src="{{ url_for('static', filename='filters/glass.png') }}" alt="Glass Filter">-->
+        </a>
+        <a href="{{ url_for('select_video_filter', filter_name='mask') }}">
+            <img src="{{ url_for('static', filename='filters/mask.png') }}" alt="Mask Filter">
+        </a>
+        <a href="{{ url_for('select_video_filter', filter_name='mask1') }}">
+            <img src="{{ url_for('static', filename='filters/mask1.png') }}" alt="Mask1 Filter">
+        </a>
+        <a href="{{ url_for('select_video_filter', filter_name='melon') }}">
+            <img src="{{ url_for('static', filename='filters/melon.png') }}" alt="Melon Filter">
+        </a>
+        <a href="{{ url_for('select_video_filter', filter_name='star') }}">
+            <img src="{{ url_for('static', filename='filters/star.png') }}" alt="Star Filter">
+        </a>
+    </div>
+    <a href="{{ url_for('stop_filtered_camera') }}">Back to Menu</a>
+</body>
+</html>

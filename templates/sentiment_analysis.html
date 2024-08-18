@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sentiment Analysis Results</title>
+    <style>
+
+        /* Reset default styles */
+        body, h2, h3, form, label, textarea, input {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #007bff;
+        }
+        
+        form {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            resize: vertical;
+        }
+        
+        form input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        h3 {
+            margin-top: 20px;
+            font-size: 1.8em;
+            color: #007bff;
+            text-align: center;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2em;
+            }
+            
+            form {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            form {
+                padding: 10px;
+            }
+            
+            form label {
+                font-size: 1em;
+            }
+            
+            form textarea {
+                font-size: 0.9em;
+            }
+            
+            form input[type="submit"] {
+                font-size: 1em;
+            }
+            
+            h3 {
+                font-size: 1.5em;
+            }
+        }
+        </style>
+</head>
+<body>  
+    <h2>Text Sentiment Analysis</h2>
+    <form method="POST" action="/sentiment_analysis">
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Analyze">
+    </form>
+    <br>
+    {% if sentiment %}
+    <h3>Sentiment: {{ sentiment }}</h3>
+    {% endif %}
+<br>
+
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>

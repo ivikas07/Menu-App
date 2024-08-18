@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Menu App</title>
+  
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+   
+    <h1>Python/ML Toolkit</h1>
+  
+    <ul>
+       
+        <li><a href="{{ url_for('whatsapp') }}">WhatsApp Message</a></li>
+        <li><a href="{{ url_for('phone_link') }}">SMS</a></li>
+        <li><a href="{{ url_for('email') }}">Email</a></li>
+        <li><a href="{{ url_for('send_bulk_email') }}">Bulk Email</a></li>
+        <li><a href="{{ url_for('search') }}">Search On Google</a></li>
+        <li><a href="{{ url_for('speak_text') }}">Text-To-Speech</a></li>
+        <li><a href="{{ url_for('volume') }}">Volume Control</a></li>
+        <li><a href="{{ url_for('geo_location') }}">Get Cordinates </a></li> 
+        <li><a href="{{ url_for('face_detection') }}">Cropping Face during Live Video</a></li>
+        <li><a href="{{ url_for('face_detection_filters') }}">Filters on Live Video</a></li>
+        <li><a href="{{ url_for('upload_image') }}">Apply Filter on Image</a></li>
+        <li><a href="{{ url_for('marks_prediction') }}">Marks Prediction</a></li>
+        <li><a href="{{ url_for('detect_faces_route') }}">Detect Faces in image</a></li>
+        <li><a href="{{ url_for('predict_form') }}">Predict IPL Score</a></li>
+        <li><a href="/generate_prompt">Image Process</a></li> 
+        <li><a href="/process_video">Process Video</a></li>
+        <li><a href="{{ url_for('predict_iris_route') }}">Predict Iris Species</a></li>
+        <li><a href="/predict_cat_dog">Cat or Dog classify</a></li>
+        <li><a href="/predict_titanic">Titanic Survival Prediction</a></li>
+        <li><a href="/sentiment_analysis">Text Sentiment Analysis</a></li>
+        <li><a href="{{ url_for('capture_images') }}">Capture and Combine Images</a></li>
+        <li><a href="{{ url_for('automatic_data_processing_route') }}">Automatic Data Processing</a></li>
+        </ul>
+     
+    </ul>
+ 
+    
+</body>
+</html>
+
+</body>
+</html>

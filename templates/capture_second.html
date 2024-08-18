@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>/* styles.css */
+
+        /* Reset default styles */
+        body, h2, form, img, input {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        h2 {
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            input[type="submit"] {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+        </style>
+    <title>Capture Second Image</title>
+</head>
+<body>
+    <h2>First Image Captured</h2>
+    <img src="{{ url_for('static', filename=first_image_path) }}" alt="First Image" width="400">
+    <h2>Capture Second Image</h2>
+    <form method="POST" action="{{ url_for('capture_second') }}">
+        <input type="hidden" name="first_image_path" value="{{ first_image_path }}">
+        <input type="submit" value="Capture Second Image">
+    </form>
+</body>
+</html>

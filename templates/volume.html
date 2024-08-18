@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Volume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/volume.css') }}">
+</head>
+<body>
+    <h1>Set Volume</h1>
+    <form action="{{ url_for('volume') }}" method="post">
+        <label for="volume_level">Volume Level (0-100):</label>
+        <input type="number" id="volume_level" name="volume_level" min="0" max="100" required><br><br>
+        <input type="submit" value="Set Volume">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

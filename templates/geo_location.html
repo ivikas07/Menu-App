@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Geo Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/location.css') }}">
+</head>
+<body>
+    <h1>Get Geo Location</h1>
+    <form action="{{ url_for('geo_location_route') }}" method="post">
+        <label for="location_input">Enter IP address or location-based query (optional):</label>
+        <input type="text" id="location_input" name="location_input" placeholder="Leave blank for current location"><br><br>
+        <input type="submit" value="Get Location">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

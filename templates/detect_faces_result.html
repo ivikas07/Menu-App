@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Faces Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detect_face_result.css') }}">
+</head>
+<body>
+    <h1>Detect Faces Result</h1>
+    <p>Number of Faces Detected: {{ num_faces }}</p>
+    <img src="{{ url_for('static', filename='result_faces.jpg') }}" alt="Detected Faces">
+    <br><br>
+    <a href="{{ url_for('detect_faces_route') }}">Detect More Faces</a>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

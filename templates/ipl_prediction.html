@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Score Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ipl.css') }}">
+</head>
+<body>
+    <h1>IPL Score Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="runs_scored">Runs Scored:</label>
+        <input type="number" id="runs_scored" name="runs_scored" value="{{ runs_scored }}" required><br><br>
+
+        <label for="wickets_lost">Wickets Lost:</label>
+        <input type="number" id="wickets_lost" name="wickets_lost" value="{{ wickets_lost }}" required><br><br>
+
+        <label for="overs_played">Overs Played:</label>
+        <input type="number" id="overs_played" name="overs_played" value="{{ overs_played }}" required><br><br>
+
+        <label for="runs_conceded">Runs Conceded:</label>
+        <input type="number" id="runs_conceded" name="runs_conceded" value="{{ runs_conceded }}" required><br><br>
+
+        <label for="extras">Extras:</label>
+        <input type="number" id="extras" name="extras" value="{{ extras }}" required><br><br>
+
+        <label for="boundaries_hit">Boundaries Hit:</label>
+        <input type="number" id="boundaries_hit" name="boundaries_hit" value="{{ boundaries_hit }}" required><br><br>
+
+        <label for="sixes_hit">Sixes Hit:</label>
+        <input type="number" id="sixes_hit" name="sixes_hit" value="{{ sixes_hit }}" required><br><br>
+
+        <label for="partnerships">Partnership Runs:</label>
+        <input type="number" id="partnerships" name="partnerships" value="{{ partnerships }}" required><br><br>
+
+        <button type="submit">Predict IPL Score</button>
+    </form>
+
+    {% if prediction is not none %}
+    <h2>Prediction Result:</h2>
+    <p>The predicted IPL score is: <strong>{{ prediction }}</strong></p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

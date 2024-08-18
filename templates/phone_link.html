@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message via Phone Link</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phone_link.css') }}">
+</head>
+<body>
+    <h1>Send a Message via Phone Link</h1>
+    <form action="{{ url_for('phone_link') }}" method="post">
+        <label for="phone">Phone Number or Name:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+        
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="msg" required></textarea><br><br>
+        
+        <input type="submit" value="Send Message">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

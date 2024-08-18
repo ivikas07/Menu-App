@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/speak.css') }}">
+</head>
+<body>
+    <h1>Enter Text to Speak</h1>
+    <form action="{{ url_for('speak_text') }}" method="post">
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Speak">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Faces</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detect_faces.css') }}">
+</head>
+<body>
+    <h1>Find Faces</h1>
+    <form action="{{ url_for('detect_faces_route') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" accept=".jpg, .png, .jpeg" required>
+        <input type="submit" value="Detect Faces">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/google_search.css') }}">
+</head>
+<body>
+    <h1>Google Search</h1>
+    <form action="{{ url_for('search') }}" method="post">
+        <label for="query">Search Query:</label>
+        <input type="text" id="query" name="query" required><br><br>
+        <input type="submit" value="Search">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

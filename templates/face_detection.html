@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Face Detection</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/face_detection.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+
+
+</style>
+<body>
+    <h1>Live Video Cropping</h1>
+    <div class="camera-feed">
+        <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Camera Feed">
+    </div>
+    <a href="{{ url_for('index') }}" id="back_to_menu">Back to Menu</a>
+
+    <script>
+        // Ensure camera is stopped when navigating back to menu
+        $('#back_to_menu').click(function(e) {
+            e.preventDefault();
+            $.get("/stop_camera", function(data, status) {
+                console.log(data);
+                window.location.href = "{{ url_for('index') }}";
+            });
+        });
+    </script>
+</body>
+</html>

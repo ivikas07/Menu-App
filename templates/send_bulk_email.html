@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Bulk Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/send_bulk_email.css') }}">
+</head>
+<body>
+    <h1>Send Bulk Email</h1>
+    <form action="{{ url_for('send_bulk_email') }}" method="post">
+        <label for="email_list">Recipient Emails (comma-separated):</label>
+        <textarea id="email_list" name="email_list" rows="4" cols="50" required></textarea><br><br>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="Send Bulk Email">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Menu</a>
+</body>
+</html>

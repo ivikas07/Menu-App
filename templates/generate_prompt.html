@@ -1,0 +1,23 @@
+<!-- templates/generate_prompt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generate_prompt.css') }}">
+    <title>Generate Prompt</title>
+  
+</head>
+<body>
+    <h1>Process Your Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" required>
+        <br><br>
+        <label for="prompt_text">Enter Prompt:</label>
+        <input type="text" name="prompt_text" id="prompt_text" required>
+        <br><br>
+        <button type="submit">Generate</button>
+    </form>
+</body>
+</html>
